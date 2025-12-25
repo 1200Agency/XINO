@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J. D. Sterling | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #121212; 
+            color: #ffffff; 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        .neon-btn { background-color: #00ff41; color: #000; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .neon-btn:hover { background-color: #00cc33; transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(0, 255, 65, 0.5); }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 70%); }
+    </style>
+</head>
+<body class="antialiased hero-gradient">
+
+    <nav class="sticky top-0 z-40 bg-[#121212]/80 backdrop-blur-md">
+        <div class="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
+            <div class="text-xl font-bold tracking-tight">J. D. Sterling <span class="text-gray-500 font-normal">(Jay_Digital)</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+                <a href="#" class="text-[#00ff41]">Home</a>
+                <a href="#milestones" class="hover:text-white transition">Milestones</a>
+                <a href="#opinions" class="hover:text-white transition">Opinions</a>
+                <a href="#" class="hover:text-white transition">About Me</a>
+            </div>
+            <button onclick="toggleModal()" class="neon-btn px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider">GET IN TOUCH</button>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+            <div class="space-y-4">
+                <p class="text-gray-300 text-lg leading-relaxed max-w-md">
+                    A growth-focused professional specializing in digital infrastructure, operational efficiency, and sustainable business scaling.
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed max-w-md">
+                    I bridge the gap between emerging technologies and traditional business frameworks to drive global innovation.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap gap-4">
+                <button class="neon-btn px-8 py-4 rounded-full font-bold flex items-center group text-sm">
+                    VIEW MY WORKS <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </button>
+                <button class="border border-gray-700 px-8 py-4 rounded-full font-bold flex items-center hover:bg-white/5 transition text-sm">
+                    <i class="fa-solid fa-download mr-2 text-gray-400"></i> DOWNLOAD BRIEF
+                </button>
+            </div>
+
+            <div class="flex space-x-5 pt-4">
+                <a href="#" class="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition border border-white/5 text-gray-400 hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition border border-white/5 text-gray-400 hover:text-white"><i class="fa-regular fa-envelope"></i></a>
+                <a href="#" class="w-11 h-11 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition border border-white/5 text-gray-400 hover:text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+            <div class="glass-card p-8 rounded-[2rem] w-full max-w-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-6">
+                    <div class="w-2.5 h-2.5 bg-[#00ff41] rounded-full animate-pulse"></div>
+                </div>
+                <h3 class="text-xl font-bold mb-1">Portfolio Stats</h3>
+                <p class="text-gray-500 text-sm mb-8">Live metrics and impact</p>
+                
+                <div class="bg-white/5 rounded-2xl p-4 mb-8 flex justify-center items-center text-[#00ff41] font-semibold text-sm border border-white/5">
+                    <i class="fa-solid fa-chart-line mr-2"></i> Active Portfolio
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 group-hover:scale-110 transition"><i class="fa-solid fa-layer-group"></i></div>
+                        <div><p class="text-sm font-bold">Projects</p><p class="text-xs text-gray-500">15 Completed</p></div>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition"><i class="fa-solid fa-award"></i></div>
+                        <div><p class="text-sm font-bold">Awards</p><p class="text-xs text-gray-500">4 Global Mentions</p></div>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 group-hover:scale-110 transition"><i class="fa-solid fa-briefcase"></i></div>
+                        <div><p class="text-sm font-bold">Experience</p><p class="text-xs text-gray-500">8+ Years</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="milestones" class="bg-[#181818] py-24 rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-3">Milestones</h2>
+                    <p class="text-gray-500">Key highlights of my professional journey</p>
+                </div>
+                <a href="#" class="text-sm font-bold text-gray-400 hover:text-white transition">View All <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1591115765373-520b7098f7bb?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="font-bold text-lg">Global Expansion 2024</h4>
+                        <p class="text-xs text-gray-400 mt-2">New York Summit Keynote</p>
+                    </div>
+                </div>
+                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="font-bold text-lg">Infrastructure Lead</h4>
+                        <p class="text-xs text-gray-400 mt-2">Scale-up Workshop Facilitator</p>
+                    </div>
+                </div>
+                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="font-bold text-lg">Strategic Partnership</h4>
+                        <p class="text-xs text-gray-400 mt-2">Fintech Alliance Q3</p>
+                    </div>
+                </div>
+                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
+                        <h4 class="font-bold text-lg">Innovation Award</h4>
+                        <p class="text-xs text-gray-400 mt-2">Systems Excellence Winner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opinions" class="max-w-7xl mx-auto px-8 py-24">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-4xl font-bold mb-3">Opinions</h2>
+                <p class="text-gray-500">Thoughts on technology and growth</p>
+            </div>
+            <a href="#" class="text-sm font-bold text-gray-400 hover:text-white transition">View All <i class="fa-solid fa-arrow-right ml-1"></i></a>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-[#00ff41]">Modern Logistics</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed line-clamp-4">A look at how automation is changing the way we perceive global delivery timelines and consumer expectations in the digital age.</p>
+                </div>
+                <button class="text-[#00ff41] text-xs mt-6 font-bold hover:underline text-left">Read article</button>
+            </div>
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-[#00ff41]">Sustainable Scaling</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed line-clamp-4">Why long-term viability should always take precedence over short-term quarterly gains when building core infrastructure.</p>
+                </div>
+                <button class="text-[#00ff41] text-xs mt-6 font-bold hover:underline text-left">Read article</button>
+            </div>
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-[#00ff41]">The Digital Gap</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed line-clamp-4">Addressing the skills gap in the era of rapid software advancement and AI-driven workflows within global enterprises.</p>
+                </div>
+                <button class="text-[#00ff41] text-xs mt-6 font-bold hover:underline text-left">Read article</button>
+            </div>
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-between hover:border-white/20 transition">
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-[#00ff41]">Market Stability</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed line-clamp-4">Tips for maintaining operational stability during periods of global economic fluctuation and currency shifts.</p>
+                </div>
+                <button class="text-[#00ff41] text-xs mt-6 font-bold hover:underline text-left">Read article</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0b0b0b] pt-24 pb-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid md:grid-cols-2 gap-12 mb-20">
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-8">Navigation</p>
+                    <div class="flex space-x-10 text-sm font-medium text-gray-400">
+                        <a href="#" class="hover:text-[#00ff41] transition">Home</a>
+                        <a href="#" class="hover:text-[#00ff41] transition">About</a>
+                        <a href="#" class="hover:text-[#00ff41] transition">Milestones</a>
+                        <a href="#" class="hover:text-[#00ff41] transition">Opinions</a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">Subscribe</p>
+                    <p class="text-gray-400 text-sm mb-6">Get my latest insights delivered to your inbox.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Enter your email" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 w-full focus:outline-none focus:border-[#00ff41] transition">
+                        <button class="neon-btn px-6 rounded-xl font-bold text-sm">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:row justify-between items-center gap-6">
+                <p class="text-gray-600 text-xs">© 2025 J. D. Sterling. All rights reserved.</p>
+                <div class="flex space-x-8 text-xl text-gray-500">
+                    <i class="fa-brands fa-x-twitter hover:text-white cursor-pointer transition"></i>
+                    <i class="fa-regular fa-envelope hover:text-white cursor-pointer transition"></i>
+                    <i class="fa-brands fa-linkedin-in hover:text-white cursor-pointer transition"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="glass-card w-full max-w-xl rounded-[2.5rem] p-10 relative">
+            <button onclick="toggleModal()" class="absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
+            
+            <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+            <p class="text-gray-400 mb-10 text-lg leading-relaxed">Have a project or partnership in mind? I'd love to hear from you.</p>
+
+            <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Your Name</label>
+                        <input type="text" name="name" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#00ff41] text-white transition">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#00ff41] text-white transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Message</label>
+                    <textarea name="message" rows="5" required class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#00ff41] text-white transition" placeholder="How can I help you?"></textarea>
+                </div>
+                <button type="submit" class="neon-btn w-full py-5 rounded-2xl font-bold text-base uppercase tracking-widest mt-4">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('contactModal');
+            const isHidden = modal.classList.contains('hidden');
+            
+            if (isHidden) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal on 'Esc' key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
+                toggleModal();
+            }
+        });
+    </script>
+</body>
+</html>
