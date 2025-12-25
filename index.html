@@ -18,6 +18,8 @@
         .neon-btn:hover { background-color: #00cc33; transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(0, 255, 65, 0.5); }
         .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 70%); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="antialiased hero-gradient">
@@ -31,7 +33,20 @@
                 <a href="#opinions" class="hover:text-white transition">Opinions</a>
                 <a href="#" class="hover:text-white transition">About Me</a>
             </div>
-            <button onclick="toggleModal()" class="neon-btn px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider">GET IN TOUCH</button>
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-white transition" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+                <button onclick="toggleModal()" class="neon-btn px-6 py-2 rounded-full font-bold text-xs uppercase tracking-wider">GET IN TOUCH</button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-[#121212]/95 backdrop-blur-md border-t border-white/5">
+            <div class="px-8 py-6 space-y-4 text-sm font-medium text-gray-400">
+                <a href="#" class="block text-[#00ff41] py-2">Home</a>
+                <a href="#milestones" class="block hover:text-white transition py-2">Milestones</a>
+                <a href="#opinions" class="block hover:text-white transition py-2">Opinions</a>
+                <a href="#" class="block hover:text-white transition py-2">About Me</a>
+            </div>
         </div>
     </nav>
 
@@ -92,7 +107,7 @@
         </div>
     </header>
 
-    <section id="milestones" class="bg-[#181818] py-24 rounded-t-[4rem]">
+    <section id="milestones" class="bg-[#181818] py-24 rounded-t-[4rem] fade-in">
         <div class="max-w-7xl mx-auto px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
@@ -104,21 +119,21 @@
             
             <div class="grid md:grid-cols-4 gap-6">
                 <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
-                    <img src="https://images.unsplash.com/photo-1591115765373-520b7098f7bb?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1591115765373-520b7098f7bb?auto=format&fit=crop&w=500" alt="Global Expansion 2024 - New York Summit Keynote" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
                         <h4 class="font-bold text-lg">Global Expansion 2024</h4>
                         <p class="text-xs text-gray-400 mt-2">New York Summit Keynote</p>
                     </div>
                 </div>
                 <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500" alt="Infrastructure Lead - Scale-up Workshop Facilitator" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
                         <h4 class="font-bold text-lg">Infrastructure Lead</h4>
                         <p class="text-xs text-gray-400 mt-2">Scale-up Workshop Facilitator</p>
                     </div>
                 </div>
                 <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500" alt="Strategic Partnership - Fintech Alliance Q3" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
                         <h4 class="font-bold text-lg">Strategic Partnership</h4>
                         <p class="text-xs text-gray-400 mt-2">Fintech Alliance Q3</p>
@@ -135,7 +150,7 @@
         </div>
     </section>
 
-    <section id="opinions" class="max-w-7xl mx-auto px-8 py-24">
+    <section id="opinions" class="max-w-7xl mx-auto px-8 py-24 fade-in">
         <div class="flex justify-between items-end mb-12">
             <div>
                 <h2 class="text-4xl font-bold mb-3">Opinions</h2>
@@ -209,6 +224,11 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-[#00ff41] text-black rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-[#00cc33] hover:scale-110 z-30" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
     <div id="contactModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="glass-card w-full max-w-xl rounded-[2.5rem] p-10 relative">
             <button onclick="toggleModal()" class="absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
@@ -216,7 +236,7 @@
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-gray-400 mb-10 text-lg leading-relaxed">Have a project or partnership in mind? I'd love to hear from you.</p>
 
-            <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+            <form id="contactForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-3">Your Name</label>
@@ -240,7 +260,7 @@
         function toggleModal() {
             const modal = document.getElementById('contactModal');
             const isHidden = modal.classList.contains('hidden');
-            
+
             if (isHidden) {
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
@@ -255,6 +275,88 @@
             if (e.key === 'Escape' && !document.getElementById('contactModal').classList.contains('hidden')) {
                 toggleModal();
             }
+        });
+
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            console.log('Form submitted:', {
+                name: this.name.value,
+                email: this.email.value,
+                message: this.message.value
+            });
+            this.reset();
+            toggleModal();
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const isHidden = mobileMenu.classList.contains('hidden');
+
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after clicking a link
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Fade-in animation with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('backToTop');
+
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Scroll to top when button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
