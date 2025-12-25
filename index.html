@@ -187,8 +187,8 @@ hu<!DOCTYPE html>
                         <p class="text-xs text-gray-400 mt-2">State Marketing Lead for /send expansion across Northern Nigeria</p>
                     </div>
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5 hover:border-[#00ff41]/30 transition-all duration-500 hover:shadow-lg hover:shadow-[#00ff41]/20 cursor-pointer" onclick="openMilestoneModal('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500', 'fa-handshake', '2024', 'Ambassador Role', 'Ambassador & affiliate for multiple blockchain initiatives and Web3 platforms', 'This milestone showcases my extensive network and influence in the blockchain and Web3 space. As an ambassador and affiliate for multiple blockchain initiatives and Web3 platforms, I have leveraged my expertise and connections to promote various projects, facilitate partnerships, and drive adoption. My ambassadorial roles have involved representing projects at events, creating educational content, and building bridges between different ecosystems, contributing to the overall growth and interconnectedness of the Web3 community.')">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=500" alt="Ambassador Role" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
+                <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] border border-white/5 hover:border-[#00ff41]/30 transition-all duration-500 hover:shadow-lg hover:shadow-[#00ff41]/20 cursor-pointer" onclick="openMilestoneModal('chair.jpg', 'fa-handshake', '2024', 'Ambassador Role', 'Ambassador & affiliate for multiple blockchain initiatives and Web3 platforms', 'This milestone showcases my extensive network and influence in the blockchain and Web3 space. As an ambassador and affiliate for multiple blockchain initiatives and Web3 platforms, I have leveraged my expertise and connections to promote various projects, facilitate partnerships, and drive adoption. My ambassadorial roles have involved representing projects at events, creating educational content, and building bridges between different ecosystems, contributing to the overall growth and interconnectedness of the Web3 community.')">
+                    <img src="chair.jpg" alt="Ambassador Role" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
                     <div class="absolute top-4 right-4 bg-[#00ff41]/20 backdrop-blur-sm rounded-full p-2">
                         <i class="fa-solid fa-handshake text-[#00ff41] text-lg"></i>
                     </div>
@@ -479,9 +479,17 @@ hu<!DOCTYPE html>
             document.getElementById('milestoneTitle').textContent = title;
             document.getElementById('milestoneYear').textContent = year;
             document.getElementById('milestoneDescription').textContent = description;
-            document.getElementById('milestoneDetails').innerHTML = `<p class="text-gray-400 leading-relaxed">${details}</p>`;
+            let detailsHtml = `<p class="text-gray-400 leading-relaxed">${details}</p>`;
+            if (title === 'Ambassador Role') {
+                detailsHtml += '<img src="stand wall.jpg" alt="Stand Wall" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'stand wall.jpg\')">';
+            }
+            document.getElementById('milestoneDetails').innerHTML = detailsHtml;
             document.getElementById('milestoneModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+        }
+
+        function changeImage(src) {
+            document.getElementById('milestoneImage').src = src;
         }
 
         function closeMilestoneModal() {
