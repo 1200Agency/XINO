@@ -208,18 +208,7 @@
                         <p class="text-xs text-gray-400 mt-2">Ambassador & affiliate for multiple blockchain initiatives and Web3 platforms</p>
                     </div>
                 </div>
-                <div class="group relative rounded-3xl overflow-hidden min-w-[280px] h-[420px]
- flex-shrink-0 border border-white/5 hover:border-[#00ff41]/30 transition-all duration-500 hover:shadow-lg hover:shadow-[#00ff41]/20 cursor-pointer" onclick="openMilestoneModal('https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=500&q=80', 'fa-globe', '2024', 'African Growth Contributor', 'Key contributor to African growth for Avalanche, CoinEx, Pillow, Busha, Send Africa & Canton Network', 'This milestone represents my significant contributions to the growth and adoption of blockchain and Web3 technologies across Africa. As a key contributor to multiple leading platforms including Avalanche, CoinEx, Pillow, Busha, Send Africa, and Canton Network, I have played a pivotal role in expanding their presence and user base in the African market. My efforts have focused on market development, partnership building, community engagement, and strategic initiatives that have helped these platforms establish strong footholds in various African countries, driving innovation and financial inclusion through blockchain technology.')">
-                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=500&q=80" alt="African Growth Contributor" class="object-cover h-full w-full opacity-40 group-hover:scale-105 group-hover:opacity-60 transition duration-700">
-                    <div class="absolute top-4 right-4 bg-[#00ff41]/20 backdrop-blur-sm rounded-full p-2">
-                        <i class="fa-solid fa-globe text-[#00ff41] text-lg"></i>
-                    </div>
-                    <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-bold text-[#00ff41]">2024</div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
-                        <h4 class="font-bold text-lg">African Growth Contributor</h4>
-                        <p class="text-xs text-gray-400 mt-2">Key contributor to African growth for Avalanche, CoinEx, Pillow, Busha, Send Africa & Canton Network</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -486,8 +475,34 @@
             document.getElementById('milestoneYear').textContent = year;
             document.getElementById('milestoneDescription').textContent = description;
             let detailsHtml = `<p class="text-gray-400 leading-relaxed">${details}</p>`;
-            if (title === 'Ambassador Role') {
-                detailsHtml += '<img src="stand wall.jpg" alt="Stand Wall" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'stand wall.jpg\')">';
+            if (title === 'User Onboarding') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0001.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0001.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0002.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0002.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0003.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0003.jpg\')">';
+            } else if (title === 'Student Communities') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0004.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0004.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0005.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0005.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0006.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0006.jpg\')">';
+            } else if (title === 'Event Organization') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0007.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0007.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0008.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0008.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0009.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0009.jpg\')">';
+            } else if (title === 'Basketball Court Renovation') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0010.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0010.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0011.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0011.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0012.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0012.jpg\')">';
+            } else if (title === 'Ecosystem Scaling') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0013.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0013.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0014.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0014.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0015.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0015.jpg\')">';
+            } else if (title === 'Marketing Leadership') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0016.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0016.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0017.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0017.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0018.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0018.jpg\')">';
+            } else if (title === 'Ambassador Role') {
+                detailsHtml += '<img src="Images/IMG-20251228-WA0019.jpg" alt="Image 1" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0019.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0020.jpg" alt="Image 2" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0020.jpg\')"> ';
+                detailsHtml += '<img src="Images/IMG-20251228-WA0021.jpg" alt="Image 3" class="mt-4 w-32 h-20 object-cover rounded-lg border border-white/10 cursor-pointer" onclick="changeImage(\'Images/IMG-20251228-WA0021.jpg\')">';
             }
             document.getElementById('milestoneDetails').innerHTML = detailsHtml;
             document.getElementById('milestoneModal').classList.remove('hidden');
