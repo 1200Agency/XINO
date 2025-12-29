@@ -36,6 +36,7 @@
                 <a href="#milestones" class="hover:text-white transition">Milestones</a>
                 <a href="#opinions" class="hover:text-white transition">Opinions</a>
                 <a href="#" id="aboutMeBtn" class="hover:text-white transition">About Me</a>
+                <a href="#" id="homeBtn" class="hover:text-white transition hidden">Home</a>
             </div>
             <div class="flex items-center space-x-4">
                 <button onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-white transition" aria-label="Toggle mobile menu">
@@ -50,6 +51,7 @@
                 <a href="#milestones" class="block hover:text-white transition py-2">Milestones</a>
                 <a href="#opinions" class="block hover:text-white transition py-2">Opinions</a>
                 <a href="#" id="aboutMeBtn" class="block hover:text-white transition py-2">About Me</a>
+                <a href="#" id="homeBtn" class="block hover:text-white transition py-2 hidden">Home</a>
             </div>
 
         </div>
@@ -415,14 +417,19 @@
         // Back to Top Button functionality
         const backToTopButton = document.getElementById('backToTop');
 
-        // Show/hide button based on scroll position
+        // Home button functionality
+        const homeBtn = document.getElementById('homeBtn');
+
+        // Show/hide buttons based on scroll position
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('opacity-0', 'invisible');
                 backToTopButton.classList.add('opacity-100', 'visible');
+                homeBtn.classList.remove('hidden');
             } else {
                 backToTopButton.classList.remove('opacity-100', 'visible');
                 backToTopButton.classList.add('opacity-0', 'invisible');
+                homeBtn.classList.add('hidden');
             }
         });
 
