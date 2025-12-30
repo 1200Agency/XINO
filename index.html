@@ -45,7 +45,8 @@
             #backToTop { bottom: 1.25rem !important; right: 1.25rem !important; }
 
             /* Mobile modal close button (small circular X) placed inside the modal card */
-            .modal-close-sm { display: block !important; position: absolute !important; top: calc(0.5rem + env(safe-area-inset-top, 0px)) !important; right: calc(0.5rem + env(safe-area-inset-right, 0px)) !important; z-index: 60 !important; background: rgba(255,255,255,0.04); color: #ffffff !important; width: 36px !important; height: 36px !important; border-radius: 9999px !important; border: 1px solid rgba(255,255,255,0.08) !important; font-size: 20px !important; line-height: 36px !important; text-align: center !important; }
+            .modal-close-sm { display: block !important; position: absolute !important; top: 1rem !important; right: 1rem !important; z-index: 60 !important; background: rgba(255,255,255,0.15) !important; color: #ffffff !important; width: 44px !important; height: 44px !important; border-radius: 9999px !important; border: 1px solid rgba(255,255,255,0.2) !important; font-size: 22px !important; line-height: 44px !important; text-align: center !important; box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important; transition: all 0.2s ease !important; cursor: pointer !important; }
+            .modal-close-sm:hover { background: rgba(255,255,255,0.25) !important; transform: scale(1.05) !important; }
 
             /* Hide the large close button inside modals on small screens to avoid duplicates */
             .modal-close-lg { display: none !important; }
@@ -387,6 +388,13 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Close contact modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleModal();
+            }
+        });
 
         // Close modal on 'Esc' key
         window.addEventListener('keydown', (e) => {
