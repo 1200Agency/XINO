@@ -24,6 +24,35 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
+        /* Mobile-friendly overrides (preserve desktop look) */
+        @media (max-width: 640px) {
+            /* Make opinion cards narrower so they fit better on phones */
+            .opinions-card { min-width: 260px !important; height: 14rem !important; }
+
+            /* Ensure modal/content containers fit the viewport */
+            #contactModal .glass-card, #milestoneModal .glass-card { max-width: 95% !important; padding: 1.5rem !important; border-radius: 1.25rem !important; }
+
+            /* Scale down large social/action buttons slightly */
+            .w-14.h-14 { width: 44px !important; height: 44px !important; }
+
+            /* Ensure milestone image scales nicely inside modal */
+            #milestoneImage { height: auto !important; max-height: 45vh !important; }
+
+            /* Reduce heavy paddings on header for small screens */
+            header { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+            /* Make back-to-top and floating buttons sit nicely */
+            #backToTop { bottom: 1.25rem !important; right: 1.25rem !important; }
+
+            /* Mobile modal close button (small circular X) placed inside the modal card */
+            .modal-close-sm { display: block !important; position: absolute !important; top: calc(0.5rem + env(safe-area-inset-top, 0px)) !important; right: calc(0.5rem + env(safe-area-inset-right, 0px)) !important; z-index: 60 !important; background: rgba(255,255,255,0.04); color: #ffffff !important; width: 36px !important; height: 36px !important; border-radius: 9999px !important; border: 1px solid rgba(255,255,255,0.08) !important; font-size: 20px !important; line-height: 36px !important; text-align: center !important; }
+
+            /* Hide the large close button inside modals on small screens to avoid duplicates */
+            .modal-close-lg { display: none !important; }
+        }
+
+        /* Default: hide small mobile close button on desktop */
+        .modal-close-sm { display: none; }
     </style>
 </head>
 <body class="antialiased">
@@ -215,16 +244,16 @@
         </div>
 
         <div class="flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 lg:gap-8">
-            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
+            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 opinions-card hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
                 <a href="https://x.com/MBolaCrypto/status/1999134780835664065"><img src="screenshot/first.JPG" class="w-full h-full rounded-3xl object-cover" alt="First"></a>
             </div>
-            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
+            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 opinions-card hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
                 <a href="https://x.com/MBolaCrypto/status/1946537215544218006"><img src="screenshot/second.JPG" class="w-full h-full rounded-3xl object-cover" alt="Second"></a>
             </div>
-            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
+            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 opinions-card hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
                 <a href="https://x.com/MBolaCrypto/status/2004584993209893099"><img src="screenshot/third.JPG" class="w-full h-full rounded-3xl object-cover" alt="Third"></a>
             </div>
-            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
+            <div class="glass-card rounded-3xl min-w-[350px] flex-shrink-0 h-64 opinions-card hover:border-[#00ff41]/30 hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff41]/20">
                 <a href="https://x.com/MBolaCrypto/status/2003537928547693006"><img src="screenshot/fourth.JPG" class="w-full h-full rounded-3xl object-cover" alt="Fourth"></a>
             </div>
         </div>
@@ -291,7 +320,8 @@
 
     <div id="contactModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="glass-card w-full max-w-xl rounded-[2.5rem] p-10 relative">
-            <button onclick="toggleModal()" class="absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
+            <button onclick="toggleModal()" class="modal-close-lg absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
+            <button onclick="toggleModal()" class="modal-close-sm" aria-label="Close small">&times;</button>
 
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-gray-400 mb-10 text-lg leading-relaxed">Have a project or partnership in mind? I'd love to hear from you.</p>
@@ -318,7 +348,8 @@
 
     <div id="milestoneModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="glass-card w-full max-w-4xl rounded-[2.5rem] p-10 relative">
-            <button onclick="closeMilestoneModal()" class="absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
+            <button onclick="closeMilestoneModal()" class="modal-close-lg absolute top-8 right-8 text-gray-500 hover:text-white text-3xl transition">&times;</button>
+            <button onclick="closeMilestoneModal()" class="modal-close-sm" aria-label="Close small">&times;</button>
 
             <div class="grid md:grid-cols-2 gap-8">
                 <div>
